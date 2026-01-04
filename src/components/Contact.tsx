@@ -2,10 +2,12 @@ import { CONTACT_INFO, EMAILJS_CONFIG } from '../constant';
 import BackButton from './BackButton';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import SuccessModal from './SuccessModal';
 
 const Contact = ({ isPreview = false }: { isPreview?: boolean }) => {
     const formRef = useRef<HTMLFormElement>(null);
     const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -42,7 +44,7 @@ const Contact = ({ isPreview = false }: { isPreview?: boolean }) => {
             EMAILJS_CONFIG.PUBLIC_KEY
         ).then(() => {
             setLoading(false);
-            alert('Thank you. I will get back to you as soon as possible.');
+            setShowModal(true);
             setForm({
                 name: '',
                 email: '',
@@ -171,6 +173,7 @@ const Contact = ({ isPreview = false }: { isPreview?: boolean }) => {
                     </div>
                 </div>
             </div>
+            <SuccessModal isOpen={showModal} onClose={() => setShowModal(false)} />
         </div>
     );
 };
