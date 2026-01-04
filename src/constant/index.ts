@@ -5,6 +5,7 @@ import MusicSunoImage from '../assets/MusicSunoImage.png';
 import QuickMoneyImage from '../assets/QuickMoneyImage.png';
 import StudyAreaImage from '../assets/StudyAreaImage.png';
 import YouMeImage from '../assets/YouMeImage.png';
+import logo from '../assets/Vinay Patel Image_imresizer.jpg';
 
 export const EXPERIENCES = [
   {
@@ -172,3 +173,5 @@ export const EMAILJS_CONFIG = {
   TEMPLATE_ID: "template_n7doaol",
   PUBLIC_KEY: "Us-Unlj3JEBPl2TuI",
 };
+
+export const LOGO = logo;
